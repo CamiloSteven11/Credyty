@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Formulario Ingreso</h2>
+  <div class="container-data mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+          <div class="form-group text-center">
+            <label for="tipoVehiculo">Tipo de Vehículo</label>
+            <div class="card-container row justify-content-center">
+              <div class="card col-4" (click)="selectCard('Carro')" [ngClass]="{'selected': selectedCard === 'Carro'}">
+                <img src="https://cdn-icons-png.flaticon.com/512/3202/3202926.png" alt="Carro" class="card-img-top">
+                <p class="card-text text-center">Carro</p>
+              </div>
+              <div class="card col-4" (click)="selectCard('Moto')" [ngClass]="{'selected': selectedCard === 'Moto'}">
+                <img src="https://cdn-icons-png.flaticon.com/512/3988/3988406.png" alt="Moto" class="card-img-top">
+                <p class="card-text text-center">Moto</p>
+              </div>
+              <div class="card col-4" (click)="selectCard('Bicicleta')" [ngClass]="{'selected': selectedCard === 'Bicicleta'}">
+                <img src="https://cdn.icon-icons.com/icons2/2645/PNG/512/bicycle_icon_160403.png" alt="Bicicleta"
+                  class="card-img-top">
+                <p class="card-text text-center">Bicicleta</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label for="placa">Placa</label>
+              <input type="text" formControlName="placa" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="placa">Modelo</label>
+              <input type="text" formControlName="modelo" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label for="placa">Color</label>
+              <input type="text" formControlName="color" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="horaIngreso">Hora de Ingreso</label>
+              <input type="time" formControlName="horaIngreso" class="form-control" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar Ingreso</button>
+        </form>
+    </div>
+  </div>
+</div>
